@@ -1,19 +1,50 @@
+const personalPlanPeter = {
+    name: "Peter",
+    age: "29",
+    skills: {
+        languages: ['ru', 'eng', 'fu', 'erg'],
+        programmingLangs: {
+            js: '20%',
+            php: '10%',
 
-function pow(x, n) {
-    if (n >= 1) {
-       return x**n; 
+        },
+        exp: '1 month'
+    },
+    showAgeAndLangs: function (plan) {
+        const {age} = plan;
+        let {languages} = plan.skills;
+        let res = '';
+        
+        for( let i = 0; i < languages.length; i++ ) {
+            res += `${languages[i]} `;
+        }
+        return `Мне ${age} и я владею языками: ${res.toLocaleUpperCase()}`;
     }
+};
+
+console.log(personalPlanPeter.showAgeAndLangs(personalPlanPeter));
+
+
+
+function showExperience (obj) {
+   const {exp} = obj.skills;
+   return exp;
+    
 }
 
+console.log(showExperience(personalPlanPeter));
 
-let x = prompt('Enter number please');
-let n = prompt('Enter power');
+function showProgramingLang (lang) {
+    const {programmingLangs} = lang.skills;
+    let string = '';
 
-let res = pow(x, n);
-alert(res);
+    for(let key in programmingLangs) {
+        string += `Язык ${key} изучен на ${programmingLangs[key]} \n`;
+    }
 
-let str = "football";
+    return string;
 
+}
 
+console.log(showProgramingLang (personalPlanPeter));
 
-console.log(str.slice(-5, -2));

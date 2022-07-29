@@ -62,3 +62,5 @@ console.log(str.substr(7, 5));
 const num = '14.4pxdsfsdf';
 
 console.log(parseFloat(num));
+
+
