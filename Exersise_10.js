@@ -14,11 +14,13 @@ const personalPlanPeter = {
         const {age} = plan;
         let {languages} = plan.skills;
         let res = '';
-        
-        for( let i = 0; i < languages.length; i++ ) {
-            res += `${languages[i]} `;
-        }
-        return `Мне ${age} и я владею языками: ${res.toLocaleUpperCase()}`;
+        languages.forEach(function(item){
+            res += `${item.toLocaleUpperCase()} `;
+        });
+        // for( let i = 0; i < languages.length; i++ ) {
+        //     res += `${languages[i]} `;
+        // }
+        return `Мне ${age} и я владею языками: ${res}`;
     }
 };
 
