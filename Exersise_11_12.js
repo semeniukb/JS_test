@@ -37,10 +37,10 @@ function reverse (string) {
     if (typeof(string) !== 'string') {
         return 'Ошибка!';
     } else {
-    let arr = [...string];
-    let rev = arr.reverse();
-    let str = rev.join('');
-    return str;
+    let arr = [...string].reverse().join('');
+    // let rev = arr.reverse();
+    // let str = rev.join('');
+    return arr;
     }
 }
 
@@ -55,27 +55,33 @@ const allCurrencies = [...baseCurrencies, ...additionalCurrencies];
 function availableCurr(arr, missingCurr) {
     if (arr.length === 0) {
         return 'Нет доступных валют';
-    } else {
-        let result = 'Доступные валюты: \n';
-        for(let key of arr) {
-            if (key == missingCurr) {
-                arr.splice(arr[key], 3);
-                console.log(key);
-            }
-
-            result += `${key}\n`;
-        }
-
-        console.log(result);
     }
+    let result = 'Доступные валюты: \n';
+       
+    for (let i = 0; i < arr.length; i++) {
+       if (arr[i] == missingCurr) {
+        arr.splice(i, 1);          
+    }  
+        if (arr[i] !== undefined) {
+            result += `${arr[i]}\n`;
+        }
+    }
+        return result;
+  
 }
 
-availableCurr(allCurrencies, 'USD');
+
+console.log(availableCurr(allCurrencies, 'USD'));
 
 
+let string = 'I love you';
 
-let arr = ["Я", "изучаю", "JavaScript"];
+function rev(str) {
+    let revStr = '';
+    for(let i = str.length - 1; i >= 0; i--) {
+        revStr += `${str[i]}`;
+    }
+    return revStr;
+}
 
-arr.splice(1, 1);
-
-console.log(arr);
+console.log(rev(string));
