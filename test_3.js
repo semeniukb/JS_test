@@ -88,3 +88,23 @@ const video = ['youtube', 'vimeo'],
         internet = [...video, ...blogs, 'vk', 'facebook'];
 
         console.log(internet);
+
+
+const  soldier = {
+    health: 1000,
+    armor: 5,
+    bracers: "Knife",
+    sayBeforeKill: function () {
+        console.log('I will be your happiness');
+    }
+};
+
+const tara = Object.create(soldier);
+
+tara.name = 'Taras';
+tara.health = 5000;
+
+console.log(tara.bracers);
+tara.sayBeforeKill();
+
+console.dir(soldier);
