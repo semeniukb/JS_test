@@ -52,26 +52,42 @@ const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
 const allCurrencies = [...baseCurrencies, ...additionalCurrencies];
 
 
+// function availableCurr(arr, missingCurr) {
+//     if (arr.length === 0) {
+//         return 'Нет доступных валют';
+//     }
+//     let result = 'Доступные валюты: \n';
+       
+//     for (let i = 0; i < arr.length; i++) {
+//        if (arr[i] == missingCurr) {
+//         arr.splice(i, 1);          
+//     }  
+//         if (arr[i] !== undefined) {
+//             result += `${arr[i]}\n`;
+//         }
+//     }
+//         return result;
+  
+// }
+
 function availableCurr(arr, missingCurr) {
     if (arr.length === 0) {
         return 'Нет доступных валют';
     }
     let result = 'Доступные валюты: \n';
        
-    for (let i = 0; i < arr.length; i++) {
-       if (arr[i] == missingCurr) {
-        arr.splice(i, 1);          
-    }  
-        if (arr[i] !== undefined) {
-            result += `${arr[i]}\n`;
+    arr.forEach(function(item){
+        if (item !== missingCurr) {
+            result += `${item}\n`;
         }
-    }
-        return result;
-  
+    });
+    return result;
 }
 
 
-console.log(availableCurr(allCurrencies, 'USD'));
+
+
+console.log(availableCurr(allCurrencies, 'CNY'));
 
 
 let string = 'I love you';

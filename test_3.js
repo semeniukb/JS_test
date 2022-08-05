@@ -48,6 +48,21 @@ const numbers = {
     }
 };
 
+
+function copyNumbers(num) {
+    let obj = {};
+    for (let key in num) {
+        obj[key] = num[key];
+    }
+    num.c.x = 5;
+    console.log(num);
+    return obj;
+    
+}
+
+console.log(copyNumbers(numbers));
+
+
 const add = {
     y: 9,
     z: 8
