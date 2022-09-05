@@ -107,4 +107,5 @@ tara.health = 5000;
 console.log(tara.bracers);
 tara.sayBeforeKill();
 
-console.dir(soldier);
+console.log(Object.keys(soldier)[0]);
+
