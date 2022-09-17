@@ -32,3 +32,25 @@ const div = new ColoredRectangleWithText(10, 15, "Bohdan", 'red');
 
 console.log(div.calcArea());
 div.showMyProps();
+
+
+class Animal {
+    constructor(name) {
+        this.name = name;
+        this.speed = 0 
+    }
+}
+
+class Rabitt extends Animal {
+    constructor(name, length) {
+        super(name);
+        this.length = length
+    }
+
+}
+
+let rabbit = new Rabitt('Tim', 15);
+
+console.log(rabbit.name, rabbit.length)
+
+console.log(0,4 + 0,2)
