@@ -51,3 +51,83 @@ function isIsogram(str){
 
 console.log(countBy(1,10)) //=== [1,2,3,4,5,6,7,8,9,10]
 console.log(countBy(2,5)) //=== [2,4,6,8,10]
+
+
+
+function getCount(str) {
+  // const vowels = 'aeiou'
+  // let count = 0
+  // str.split('').forEach(item => vowels.includes(item) ? count++ : null)
+  
+  return str.split('').filter(item => 'aeiou'.includes(item)).length
+  
+  // return count;
+}
+
+console.log(getCount('abracadabra')) // 5
+
+
+function isTriangle(a,b,c){
+  if (a < 0 || b < 0 || c < 0) {
+    return false
+  }
+  const p = (a + b + c) / 2
+
+  return p*(p - a)*(p - b)*(p - c) > 0
+}
+
+console.log(isTriangle(4, -2, 4))
+
+function bmi(weight, height) {
+  const bmi = weight / (height * height)
+
+  switch (true) {
+    case (bmi <= 18.5):
+      return "Underweight"
+
+    case (bmi <= 25.0):
+      return "Normal"
+
+    case (bmi <= 30.0):
+      return "Overweight"
+
+    case (bmi > 30.0):
+      return "Obese"
+
+  }
+}
+
+
+console.log(bmi(80, 1.80))
+
+// if bmi <= 18.5 return "Underweight"
+
+// if bmi <= 25.0 return "Normal"
+
+// if bmi <= 30.0 return "Overweight"
+
+// if bmi > 30 return "Obese"
+
+
+function sumMix(x){
+  return x.reduce((acc, curr) => acc + +curr)
+}
+
+console.log(sumMix([9, 3, '7', '3'])) // 22
+
+
+function points(games) {
+  // your code here
+  // const n = games.map(item => (item.split(':')))
+
+  
+
+  return games.map(item => item[0] > item[2] ? 3 : item[0] < item[2] ? 0 : 1).reduce((acc, curr) => acc + curr)
+}
+
+
+console.log(points(['1:0','2:0','3:0','4:0','2:1','3:1','4:1','3:2','4:2','4:3'])) // 30
+
+// if x > y: 3 points
+// if x < y: 0 point
+// if x = y: 1 point
